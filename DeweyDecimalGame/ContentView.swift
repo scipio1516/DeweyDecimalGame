@@ -9,17 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 40) {
-            VStack(spacing: 20) {
-                Text("Library Organizer Quiz")
-                    .font(.title)
-                    .fontWeight(.bold)
+        NavigationView {
+            VStack(spacing: 40) {
+                VStack(spacing: 20) {
+                    Text("Library Organizer Quiz")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    NavigationLink("Instructions", destination: InstructionsView())
+                        .font(.title2)
+                        .fontWeight(.bold)
+                }
+                
+                
             }
-            
-            
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
+        
     }
 }
 
