@@ -15,9 +15,14 @@ struct ContentView: View {
                     Text("Library Organizer Quiz")
                         .font(.title)
                         .fontWeight(.bold)
+                    NavigationLink("Play Game", destination: GameView())
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding()
                     NavigationLink("Instructions", destination: InstructionsView())
                         .font(.title2)
                         .fontWeight(.bold)
+                        .padding()
                 }
                 
                 
