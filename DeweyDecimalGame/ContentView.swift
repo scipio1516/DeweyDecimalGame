@@ -15,8 +15,9 @@ struct ContentView: View {
                     Text("Library Organizer Quiz")
                         .font(.title)
                         .fontWeight(.bold)
-                    NavigationLink("Play Game", destination: GameView())
-                    MainButton(text: "Start")
+
+                    NavigationLink(destination: GameView(),
+                                   label: {MainButton(text: "Start")})
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding()
