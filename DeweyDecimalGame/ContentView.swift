@@ -16,6 +16,7 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                     NavigationLink("Play Game", destination: GameView())
+                    MainButton(text: "Start")
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding()
@@ -27,9 +28,9 @@ struct ContentView: View {
                 
                 
             }
-        }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
+        }
         
     }
 }
