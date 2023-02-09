@@ -28,6 +28,8 @@ struct BookView: View {
                 
             
         }.frame(width: 300, height: 60)
+            .draggable(Image("everest"))
+        
             
             
     }

@@ -13,7 +13,6 @@ struct GameView: View {
     var body: some View {
         VStack {
             BookView(bookTitle: "BookOne", bookColor: .red, authorName: "Author One", callID: "AUT")
-                .draggable(Image("everest"))
             BookView(bookTitle: "BookSix", bookColor: lastColor, authorName: "Author One", callID: "AUT")
                 .dropDestination(for: Image.self) {items,location in
                     lastColor = (lastColor == .green ? .blue : .green)
