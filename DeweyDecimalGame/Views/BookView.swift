@@ -8,20 +8,17 @@
 import SwiftUI
 
 struct BookView: View {
-    var bookTitle: String
-    var bookColor: Color
-    var authorName: String
-    var callID: String
+    var data: Book
     
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(bookColor)
+                .fill(data.bookColor)
                 
             HStack {
-                Text(callID).rotationEffect(Angle(degrees: 90))
-                Text(authorName)
-                Text(bookTitle).bold()
+                Text(data.callID).rotationEffect(Angle(degrees: 90))
+                Text(data.authorName)
+                Text(data.bookTitle).bold()
                 
                 
             }
@@ -37,6 +34,6 @@ struct BookView: View {
 
 struct BookView_Previews: PreviewProvider {
     static var previews: some View {
-        BookView(bookTitle: "TEST", bookColor: Color(red: 0.5, green: 0.5, blue: 0.5), authorName: "BOBBY TABLES", callID: "TAB")
+        BookView(data: Book(bookTitle: "TEST", bookColor: .gray, authorName: "Bobby Tables", callID: "BOB", deweyDecimalNumber: "13.118"))
     }
 }
