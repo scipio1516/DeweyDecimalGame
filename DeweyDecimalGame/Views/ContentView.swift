@@ -17,11 +17,12 @@ struct ContentView: View {
                         .fontWeight(.bold)
 
                     NavigationLink(destination: GameView(),
-                                   label: {MainButton(text: "Start")})
+                                   label: {MainButton(text: "Game View")})
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding()
-                    NavigationLink("Instructions", destination: InstructionsView())
+                    NavigationLink(destination: InstructionsView(),
+                                   label: {MainButton(text: "Instructions")})
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding()
