@@ -39,6 +39,8 @@ struct GameView: View {
             BookView(data: Book(bookTitle: "BookSix", bookColor: .orange, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"))
             
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
     }
 }
 
