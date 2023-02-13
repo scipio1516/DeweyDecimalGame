@@ -7,10 +7,11 @@
 
 import SwiftUI
 
+var randomColor = ColorCodable(id: UUID(), red: 0.1, green: 0.7, blue: 0.4)
 
 struct GameView: View {
     
-    @State var bookShelf = [Book(bookTitle: "BookOne", bookColor: .red, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(bookTitle: "BookTwo", bookColor: .green , authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(bookTitle: "BookThree", bookColor: .yellow, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333")]
+    @State var bookShelf = [Book(id: UUID(), bookTitle: "BookOne", bookColor: randomColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookTwo", bookColor: randomColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookThree", bookColor: randomColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333")]
     var body: some View {
         VStack {
             //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property(placeholder image). NOTE: does not work in preview, does work in simulator.
@@ -25,18 +26,13 @@ struct GameView: View {
                     bookShelf.remove(at: 0)
                     bookShelf.insert(tempBook, at: 1)
                     
-                    bookShelf[1].bookColor = (bookShelf[1].bookColor == .green ? .blue : .green)
-                    
                     return true
                 }
             BookView(data: bookShelf[2])
             
             
             
-            //start with only three books, and try to get ordering working there. Save everything below for later
-            BookView(data: Book(bookTitle: "BookFour", bookColor: .blue, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"))
-            BookView(data: Book(bookTitle: "BookFive", bookColor: .purple, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"))
-            BookView(data: Book(bookTitle: "BookSix", bookColor: .orange, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"))
+            //start with only three books, and try to get ordering working there. Save additional for later
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

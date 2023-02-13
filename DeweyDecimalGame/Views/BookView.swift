@@ -13,7 +13,7 @@ struct BookView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(data.bookColor)
+                .fill(data.bookColor.createColor())
                 
             HStack {
                 Text(data.callID).rotationEffect(Angle(degrees: 90))
@@ -33,7 +33,10 @@ struct BookView: View {
 }
 
 struct BookView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        BookView(data: Book(bookTitle: "TEST", bookColor: .gray, authorName: "Bobby Tables", callID: "BOB", deweyDecimalNumber: "13.118"))
+        
+        let grayColor = ColorCodable(id: UUID(), red: 0.5, green: 0.5, blue: 0.5)
+        BookView(data: Book(id: UUID(), bookTitle: "TEST", bookColor: grayColor, authorName: "Bobby Tables", callID: "BOB", deweyDecimalNumber: "13.118"))
     }
 }

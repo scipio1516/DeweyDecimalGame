@@ -10,15 +10,42 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 
+extension UTType {
+    static var book = UTType(exportedAs: "Leo.DeweyDecimalGame.book")
+}
+
+
+//color thingie
+
+struct ColorCodable: Identifiable, Codable {
+    var id: UUID
+    
+    var red: Double
+    var green: Double
+    var blue: Double
+    
+    func createColor() -> Color {
+        return Color(red: red, green: green, blue: blue)
+    }
+    
+}
+
 //whole-ash just following the instructions from this website. hopefully, it works well?
 //https://serialcoder.dev/text-tutorials/swiftui/first-experience-with-transferable-implementing-drag-and-drop-in-swiftui/
 
-struct Book/*:  Identifiable, Codable, Transferable*/ {
+struct Book:  Identifiable, Codable, Transferable {
+    var id: UUID
+    
+    static var transferRepresentation: some TransferRepresentation {
+        CodableRepresentation(contentType: .book)
+    }
+   
     
     var bookTitle: String
-    var bookColor: Color
+    var bookColor: ColorCodable
     var authorName: String
     var callID: String
     var deweyDecimalNumber: String
     
 }
+
