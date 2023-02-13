@@ -14,6 +14,10 @@ struct InstructionsView: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .padding()
+            Text("To Play the Dewey Decimal Game you must rearrange the books into alphabetical order from left to right.")
+                .font(.title3)
+                .padding()
+                .padding(.horizontal)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
