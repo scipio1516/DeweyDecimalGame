@@ -25,7 +25,7 @@ struct BookView: View {
                 
             
         }.frame(width: 300, height: 60)
-            .draggable(Image("everest"))
+            .draggable(data)
         
             
             
@@ -35,7 +35,6 @@ struct BookView: View {
 struct BookView_Previews: PreviewProvider {
     
     static var previews: some View {
-        
         let grayColor = ColorCodable(id: UUID(), red: 0.5, green: 0.5, blue: 0.5)
         BookView(data: Book(id: UUID(), bookTitle: "TEST", bookColor: grayColor, authorName: "Bobby Tables", callID: "BOB", deweyDecimalNumber: "13.118"))
     }

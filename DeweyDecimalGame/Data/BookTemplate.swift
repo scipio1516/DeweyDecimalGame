@@ -17,7 +17,7 @@ extension UTType {
 
 //color thingie
 
-struct ColorCodable: Identifiable, Codable {
+struct ColorCodable: Identifiable, Codable, Equatable {
     var id: UUID
     
     var red: Double
@@ -33,7 +33,8 @@ struct ColorCodable: Identifiable, Codable {
 //whole-ash just following the instructions from this website. hopefully, it works well?
 //https://serialcoder.dev/text-tutorials/swiftui/first-experience-with-transferable-implementing-drag-and-drop-in-swiftui/
 
-struct Book:  Identifiable, Codable, Transferable {
+struct Book:  Identifiable, Codable, Transferable, Equatable {
+    
     var id: UUID
     
     static var transferRepresentation: some TransferRepresentation {

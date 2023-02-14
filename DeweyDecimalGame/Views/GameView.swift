@@ -20,11 +20,12 @@ struct GameView: View {
             //(necessary? -> intersperse book views with near-invisible views), with all the dropdestination functionality. Edit views or something, with variables?
             BookView(data: bookShelf[0])
             BookView(data: bookShelf[1])
-                .dropDestination(for: Image.self) {items,location in
+                .dropDestination(for: Book.self) {tempBook, location in
                     
-                    let tempBook = bookShelf[0]
-                    bookShelf.remove(at: 0)
-                    bookShelf.insert(tempBook, at: 1)
+                    bookShelf.remove(at: bookShelf.firstIndex(where: {anotherBook in
+                        return tempBook[0] == anotherBook
+                    })!)
+                    bookShelf.insert(tempBook[0], at: 1)
                     
                     return true
                 }
