@@ -22,12 +22,16 @@ struct GameView: View {
                 BookView(data: shelf)
                     .dropDestination(for: Book.self) {tempBook, location in
                         
-                        bookShelf.remove(at: bookShelf.firstIndex(where: {anotherBook in
+                        //currently searching through the bookshelf to get locations, might want a more efficient way of keeping track?
+                        var previousLocation = bookShelf.firstIndex(where: {anotherBook in
                             return tempBook[0] == anotherBook
-                        })!)
-                        bookShelf.insert(tempBook[0], at: bookShelf.firstIndex(where: {newBookLocation in
+                        })
+                        
+                        var newLocation = (bookShelf.firstIndex(where: { newBookLocation in
                             return shelf == newBookLocation
-                        })! + 1)
+                        }) ?? previousLocation)
+                        bookShelf.remove(at: previousLocation ?? 0)
+                        bookShelf.insert(tempBook[0], at: newLocation ?? 0)
                         
                         return true
                     }
