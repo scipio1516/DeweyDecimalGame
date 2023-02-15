@@ -16,20 +16,22 @@ struct GameView: View {
         VStack {
             //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property(placeholder image). NOTE: does not work in preview, does work in simulator.
             
-            //possible implementation for drag and drop ordering???
-            //(necessary? -> intersperse book views with near-invisible views), with all the dropdestination functionality. Edit views or something, with variables?
-            BookView(data: bookShelf[0])
-            BookView(data: bookShelf[1])
-                .dropDestination(for: Book.self) {tempBook, location in
-                    
-                    bookShelf.remove(at: bookShelf.firstIndex(where: {anotherBook in
-                        return tempBook[0] == anotherBook
-                    })!)
-                    bookShelf.insert(tempBook[0], at: 1)
-                    
-                    return true
-                }
-            BookView(data: bookShelf[2])
+            //drag and drop implemented through a dropDestination modifier/View thingy. works!
+            
+            ForEach(bookShelf) { shelf in
+                BookView(data: shelf)
+                    .dropDestination(for: Book.self) {tempBook, location in
+                        
+                        bookShelf.remove(at: bookShelf.firstIndex(where: {anotherBook in
+                            return tempBook[0] == anotherBook
+                        })!)
+                        bookShelf.insert(tempBook[0], at: bookShelf.firstIndex(where: {newBookLocation in
+                            return shelf == newBookLocation
+                        })! + 1)
+                        
+                        return true
+                    }
+            }
             
             
             
