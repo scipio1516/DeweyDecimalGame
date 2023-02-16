@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-var randomColor = ColorCodable(id: UUID(), red: 0.1, green: 0.7, blue: 0.4)
+var greenColor = ColorCodable(id: UUID(), red: 0.1, green: 0.7, blue: 0.4)
+var redColor = ColorCodable(id: UUID(), red: 0.7, green: 0.1, blue: 0.1)
+var extraColor = ColorCodable(id: UUID(), red: 0.55, green: 0.35, blue: 0.67)
 
 struct GameView: View {
     
-    @State var bookShelf = [Book(id: UUID(), bookTitle: "BookOne", bookColor: randomColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookTwo", bookColor: randomColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookThree", bookColor: randomColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333")]
+    @State var bookShelf = [Book(id: UUID(), bookTitle: "BookOne", bookColor: redColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookTwo", bookColor: greenColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookThree", bookColor: extraColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333")]
     var body: some View {
         VStack {
-            //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property(placeholder image). NOTE: does not work in preview, does work in simulator.
+            //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property carrying their data. NOTE: does not work in preview, does work in simulator.
             
             //drag and drop implemented through a dropDestination modifier/View thingy. works!
             
@@ -23,11 +25,11 @@ struct GameView: View {
                     .dropDestination(for: Book.self) {tempBook, location in
                         
                         //currently searching through the bookshelf to get locations, might want a more efficient way of keeping track?
-                        var previousLocation = bookShelf.firstIndex(where: {anotherBook in
+                        let previousLocation = bookShelf.firstIndex(where: {anotherBook in
                             return tempBook[0] == anotherBook
                         })
                         
-                        var newLocation = (bookShelf.firstIndex(where: { newBookLocation in
+                        let newLocation = (bookShelf.firstIndex(where: { newBookLocation in
                             return shelf == newBookLocation
                         }) ?? previousLocation)
                         bookShelf.remove(at: previousLocation ?? 0)
