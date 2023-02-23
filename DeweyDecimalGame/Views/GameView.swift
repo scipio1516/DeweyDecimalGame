@@ -13,13 +13,26 @@ var extraColor = ColorCodable(id: UUID(), red: 0.55, green: 0.35, blue: 0.67)
 
 struct GameView: View {
     
-    @State var bookShelf = [Book(id: UUID(), bookTitle: "BookOne", bookColor: redColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookTwo", bookColor: greenColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookThree", bookColor: extraColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333")]
+    @State var bookShelf = [Book(id: UUID(), bookTitle: "BookOne", bookColor: redColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookTwo", bookColor: greenColor, authorName: "Author Two", callID: "AUT", deweyDecimalNumber: "23.333"), Book(id: UUID(), bookTitle: "BookThree", bookColor: extraColor, authorName: "Author Three", callID: "AUT", deweyDecimalNumber: "13.333")]
+    @State var isInOrder = false
     var body: some View {
+        let bookInfo = BookData(bookArray: bookShelf)
         VStack {
             //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property carrying their data. NOTE: does not work in preview, does work in simulator.
             
             //drag and drop implemented through a dropDestination modifier/View thingy. works!
             
+            Button("Check?") {
+                isInOrder = bookInfo.checkForAlphabeticalOrder()
+            }
+            
+            if(isInOrder) {
+                Text("Books are in alphabetic order by author name!")
+                    .font(.title)
+            } else {
+                Text("Books are not in order.")
+                    .font(.title)
+            }
             ForEach(bookShelf) { shelf in
                 BookView(data: shelf)
                     .dropDestination(for: Book.self) {tempBook, location in
