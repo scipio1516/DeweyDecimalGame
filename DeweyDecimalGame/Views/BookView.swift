@@ -16,7 +16,10 @@ struct BookView: View {
                 .fill(data.bookColor.createColor())
                 
             HStack {
-                Text(data.callID).rotationEffect(Angle(degrees: 90))
+                VStack {
+                    Text(data.callID)
+                    Text(data.deweyDecimalNumber)
+                }.rotationEffect(Angle(degrees: 90))
                 Text(data.authorName)
                 Text(data.bookTitle).bold()
                 
