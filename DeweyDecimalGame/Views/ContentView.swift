@@ -16,8 +16,8 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
 
-                    NavigationLink(destination: GameView(),
-                                   label: {MainButton(text: "Game View")})
+                    NavigationLink(destination: LevelSelect(),
+                                   label: {MainButton(text: "Level Select")})
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding()
