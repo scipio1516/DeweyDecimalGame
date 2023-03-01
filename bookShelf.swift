@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-// 4 lines
-
+// https://www.appcoda.com/swiftui-pie-chart/ - Helped me make the shapes needed
 struct bookShelf: View {
     @State private var rotation = 0.0
     var body: some View {
@@ -20,26 +19,48 @@ struct bookShelf: View {
                         .foregroundColor(Color.brown.opacity(0.0))
                         .overlay(RoundedRectangle(cornerRadius: 3).stroke(Color.brown, lineWidth: 3))
                      Path() { path in
-                        path.move(to: CGPoint(x: 290, y: 235))
-                        path.addLine(to: CGPoint(x: 490, y: 240))
-                        path.addLine(to: CGPoint(x: 20, y: 240))
-                        path.addLine(to: CGPoint(x: 20, y: 235))
+                        path.move(to: CGPoint(x: 290, y: 185))
+                        path.addLine(to: CGPoint(x: 490, y: 190))
+                        path.addLine(to: CGPoint(x: 20, y: 190))
+                        path.addLine(to: CGPoint(x: 20, y: 185))
                      }
                      .foregroundColor(Color.brown.opacity(2.0))
                     Path() { path in
-                       path.move(to: CGPoint(x: 460, y: 395)) // has to be 55 apart
-                       path.addLine(to: CGPoint(x: 460, y: 400))
-                       path.addLine(to: CGPoint(x: 20, y: 400))
-                       path.addLine(to: CGPoint(x: 20, y: 395))
+                       path.move(to: CGPoint(x: 460, y: 300))
+                       path.addLine(to: CGPoint(x: 460, y: 305))
+                       path.addLine(to: CGPoint(x: 20, y: 305))
+                       path.addLine(to: CGPoint(x: 20, y: 300))
                     }
                     .foregroundColor(Color.brown.opacity(2.0))
                     Path() { path in
-                       path.move(to: CGPoint(x: 630, y: 575))
-                       path.addLine(to: CGPoint(x: 630, y: 580))
-                       path.addLine(to: CGPoint(x: 20, y: 580))
-                       path.addLine(to: CGPoint(x: 20, y: 575))
+                       path.move(to: CGPoint(x: 630, y: 420))
+                       path.addLine(to: CGPoint(x: 630, y: 425))
+                       path.addLine(to: CGPoint(x: 20, y: 425))
+                       path.addLine(to: CGPoint(x: 20, y: 420))
                     }
                     .foregroundColor(Color.brown.opacity(2.0))
+                    
+                    Path() { path in
+                       path.move(to: CGPoint(x: 830, y: 535))
+                       path.addLine(to: CGPoint(x: 830, y: 540))
+                       path.addLine(to: CGPoint(x: 20, y: 540))
+                       path.addLine(to: CGPoint(x: 20, y: 535))
+                    }
+                    .foregroundColor(Color.brown.opacity(2.0))
+                    
+                    Path() { path in
+                       path.move(to: CGPoint(x: 1030, y: 650))
+                       path.addLine(to: CGPoint(x: 1030, y: 655))
+                       path.addLine(to: CGPoint(x: 20, y: 655))
+                       path.addLine(to: CGPoint(x: 20, y: 650))
+                    }
+                    .foregroundColor(Color.brown.opacity(2.0))
+                    
+                    Rectangle()
+                        .frame(width: 300, height: 60)
+                        .foregroundColor(Color.brown.opacity(0.0))
+                        .overlay(RoundedRectangle(cornerRadius: 3).stroke(Color.brown, lineWidth: 3))
+                   
                      
                 }
             }
