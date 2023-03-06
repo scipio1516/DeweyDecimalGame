@@ -9,20 +9,23 @@ import SwiftUI
 
 struct WinView: View {
     var body: some View {
-        VStack {
-            Text("You Win")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding()
-            Text("Congratulations you have beat the game with a score of ().")
-                .font(.title3)
-                .padding()
-            /*NavigationLink(destination: GameView(),
-                           label: {MainButton(text: "Restart")})
+        NavigationView {
+            VStack {
+                Text("You Win")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding()
+                NavigationLink(destination: ContentView(),
+                               label: {MainButton(text: "Restart Game")})
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding()
-             */
+                //Button(label: {MainButton(text: "Instructions")) {
+                
+                //}
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
         }
     }
 }
