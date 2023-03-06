@@ -12,21 +12,28 @@ struct LevelSelect: View {
         HStack {
             VStack {
                 Text("Order by Author name.")
-                MainButton(text: "Three Books")
-                MainButton(text: "Four Books")
-                MainButton(text: "Six Books")
-                MainButton(text:"Ten Books")
+                NavigationLink(destination: BookShelf_3(),
+                               label: {MainButton(text: "Three Books")})
+                NavigationLink(destination: BookShelf_4(),
+                               label: {MainButton(text: "Four Books")})
+                NavigationLink(destination: BookShelf_5(),
+                               label: {MainButton(text: "Five Books")})
                 Text("Ultimate Challenge!")
-                MainButton(text: "Fifteen Books")
+                NavigationLink(destination: BookShelf_8(),
+                               label: {MainButton(text: "Eight Books")})
+                 
             }
             VStack {
                 Text("Order by Call Number.")
-                MainButton(text: "Three Books")
-                MainButton(text: "Four Books")
-                MainButton(text: "Six Books")
-                MainButton(text:"Ten Books")
-                Text("Ultimate-er Challenge-er!")
-                MainButton(text: "Fifteen Books")
+                NavigationLink(destination: BookShelf_3(),
+                               label: {MainButton(text: "Three Books")})
+                NavigationLink(destination: BookShelf_4(),
+                               label: {MainButton(text: "Four Books")})
+                NavigationLink(destination: BookShelf_5(),
+                               label: {MainButton(text: "Five Books")})
+                Text("Ultimate Challenge!")
+                NavigationLink(destination: BookShelf_8(),
+                               label: {MainButton(text: "Eight Books")})
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
