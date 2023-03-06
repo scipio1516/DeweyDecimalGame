@@ -13,6 +13,10 @@ struct BookShelf_8: View {
         VStack(spacing: 40) {
             VStack(spacing: 20) {
                 ZStack {
+                    /* Rectangle()
+                    .frame(width: 350, height: 90) */ //
+                    
+                       
                     Rectangle()
                         .frame(width: 350, height: 700)
                         .foregroundColor(Color.brown.opacity(0.0))
