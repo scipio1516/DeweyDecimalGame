@@ -11,10 +11,12 @@ struct WinView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("You Win")
+                Text("Congratulations")
                     .font(.title)
                     .fontWeight(.bold)
-                    .padding()
+                Text("You Win!")
+                    .font(.title)
+                    .fontWeight(.bold)
                 NavigationLink(destination: ContentView(),
                                label: {MainButton(text: "Restart Game")})
                 .font(.title2)
