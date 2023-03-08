@@ -22,6 +22,7 @@
 		6EE58773298030A2003A3AF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE58772298030A2003A3AF6 /* ContentView.swift */; };
 		6EE58775298030A4003A3AF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EE58774298030A4003A3AF6 /* Assets.xcassets */; };
 		6EE58778298030A4003A3AF6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EE58777298030A4003A3AF6 /* Preview Assets.xcassets */; };
+		974225C929A7BDF700DF76F9 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974225C829A7BDF700DF76F9 /* WinView.swift */; };
 		97E7BE0B2992C51B004795A0 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7BE0A2992C51B004795A0 /* InstructionsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		6EE58772298030A2003A3AF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6EE58774298030A4003A3AF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EE58777298030A4003A3AF6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		974225C829A7BDF700DF76F9 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		97E7BE0A2992C51B004795A0 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,8 @@
 				6E6B0357299156E100E642EC /* GameView.swift */,
 				6E3621DE29AE59F6007CC3FC /* LevelSelect.swift */,
 				6E6B035929915C1000E642EC /* BookView.swift */,
+				2FAE520C299E7FDA004B59B5 /* bookShelf.swift */,
+				974225C829A7BDF700DF76F9 /* WinView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +216,7 @@
 				6E6B0358299156E100E642EC /* GameView.swift in Sources */,
 				6EADD50329A51BC10070F2FB /* BookData.swift in Sources */,
 				6EE58771298030A2003A3AF6 /* DeweyDecimalGameApp.swift in Sources */,
+				974225C929A7BDF700DF76F9 /* WinView.swift in Sources */,
 				6E6B035A29915C1000E642EC /* BookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,9 +14,14 @@ struct GameView: View {
     @State var isInOrder = false
     var body: some View {
         let bookInfo = BookData(bookArray: bookShelf)
+        NavigationView {
         
         VStack {
             VStack {
+                //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property carrying their data. NOTE: does not work in preview, does work in simulator.
+                
+                //drag and drop implemented through a dropDestination modifier/View thingy. works!
+                
                 Button("Check?") {
                     isInOrder = bookInfo.checkForAlphabeticalOrder()
                 }
@@ -63,7 +68,15 @@ struct GameView: View {
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
+        }
+        //.overlay(content: WinView())
+        .sheet(isPresented: $isInOrder) {
+            WinView()
+        }
+        
+        
     }
+    
 }
 
 struct GameView_Previews: PreviewProvider {
