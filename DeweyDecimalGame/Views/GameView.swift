@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-var greenColor = ColorCodable(id: UUID(), red: 0.1, green: 0.7, blue: 0.4)
-var redColor = ColorCodable(id: UUID(), red: 0.7, green: 0.1, blue: 0.1)
-var extraColor = ColorCodable(id: UUID(), red: 0.55, green: 0.35, blue: 0.67)
 
 struct GameView: View {
     
@@ -19,7 +16,7 @@ struct GameView: View {
         let bookInfo = BookData(bookArray: bookShelf)
         NavigationView {
         
-        HStack {
+        VStack {
             VStack {
                 //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property carrying their data. NOTE: does not work in preview, does work in simulator.
                 
@@ -38,7 +35,7 @@ struct GameView: View {
                 }
                 
             }
-            Spacer().frame(width: 50)
+            Spacer().frame(height: 45)
             VStack {
                 //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property carrying their data. NOTE: does not work in preview, does work in simulator.
                 
@@ -84,6 +81,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(bookShelf: [Book(id: UUID(), bookTitle: "BookOne", bookColor: redColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookTwo", bookColor: greenColor, authorName: "Author Two", callID: "AUT", deweyDecimalNumber: "23.333"), Book(id: UUID(), bookTitle: "BookThree", bookColor: extraColor, authorName: "Author Three", callID: "AUT", deweyDecimalNumber: "13.333")])
+        GameView(bookShelf: [Book(id: UUID(), bookTitle: "BookOne", bookColor: redColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: "33.333"), Book(id: UUID(), bookTitle: "BookTwo", bookColor: greenColor, authorName: "Author Two", callID: "AUT", deweyDecimalNumber: "23.333"), Book(id: UUID(), bookTitle: "BookThree", bookColor: pureBlueColor, authorName: "Author Three", callID: "AUT", deweyDecimalNumber: "13.333")])
     }
 }

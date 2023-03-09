@@ -17,7 +17,7 @@ class BookData {
     func checkForAlphabeticalOrder() -> Bool {
         
         for i in 1..<bookArray.count {
-            if(bookArray[i - 1].authorName > bookArray[i].authorName) {
+            if(bookArray[i - 1].callID > bookArray[i].callID) {
                 return false
             }
         }

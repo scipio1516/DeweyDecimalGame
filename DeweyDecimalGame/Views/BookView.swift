@@ -27,7 +27,7 @@ struct BookView: View {
             }
                 
             
-        }.frame(width: 300, height: 60)
+        }.frame(width: 250, height: 60)
             .draggable(data)
         
             

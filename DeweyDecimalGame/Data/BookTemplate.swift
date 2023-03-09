@@ -35,7 +35,7 @@ struct ColorCodable: Identifiable, Codable, Equatable {
 
 struct Book:  Identifiable, Codable, Transferable, Equatable {
     
-    var id: UUID
+    var id: UUID = UUID()
     
     static var transferRepresentation: some TransferRepresentation {
         CodableRepresentation(contentType: .book)
