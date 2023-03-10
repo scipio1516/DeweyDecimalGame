@@ -12,20 +12,20 @@ struct LevelSelect: View {
         HStack {
             VStack {
                 Text("Order by Author name.")
-                NavigationLink(destination: BookShelf_3(),
+                NavigationLink(destination: GameView(bookShelf: [Book(id: UUID(), bookTitle: "BookOne", bookColor: redColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: 0), Book(id: UUID(), bookTitle: "BookTwo", bookColor: greenColor, authorName: "Author Two", callID: "AUT", deweyDecimalNumber: 0), Book(id: UUID(), bookTitle: "BookThree", bookColor: pureBlueColor, authorName: "Author Three", callID: "AUT", deweyDecimalNumber: 0)], isDeweyOrNot: false),
                                label: {MainButton(text: "Three Books")})
                 NavigationLink(destination: BookShelf_4(),
                                label: {MainButton(text: "Four Books")})
                 NavigationLink(destination: BookShelf_5(),
                                label: {MainButton(text: "Five Books")})
                 Text("Ultimate Challenge!")
-                NavigationLink(destination: BookShelf_8(),
+                NavigationLink(destination: GameView(bookShelf: fictionBookDatabase, isDeweyOrNot: false),
                                label: {MainButton(text: "Eight Books")})
                  
             }
             VStack {
                 Text("Order by Call Number.")
-                NavigationLink(destination: BookShelf_3(),
+                NavigationLink(destination: GameView(bookShelf: [Book(id: UUID(), bookTitle: "BookOne", bookColor: redColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: 33.333), Book(id: UUID(), bookTitle: "BookTwo", bookColor: greenColor, authorName: "Author Two", callID: "AUT", deweyDecimalNumber: 23.333), Book(id: UUID(), bookTitle: "BookThree", bookColor: pureBlueColor, authorName: "Author Three", callID: "AUT", deweyDecimalNumber: 13.333)], isDeweyOrNot: true),
                                label: {MainButton(text: "Three Books")})
                 NavigationLink(destination: BookShelf_4(),
                                label: {MainButton(text: "Four Books")})

@@ -10,7 +10,25 @@ import SwiftUI
 struct BookView: View {
     var data: Book
     
+    var bookNumber: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        formatter.minimumIntegerDigits = 3
+        formatter.maximumIntegerDigits = 3
+        
+        let number = NSNumber(value: data.deweyDecimalNumber)
+        let formattedValue = formatter.string(from: number)
+        
+        
+        return formattedValue ?? ""
+    }
+    
+    
     var body: some View {
+        
+        //set up formatter so there's always 3 digits before the decimal, and a maximum of 2 after.
+        
         ZStack {
             Rectangle()
                 .fill(data.bookColor.createColor())
@@ -18,7 +36,10 @@ struct BookView: View {
             HStack {
                 VStack {
                     Text(data.callID)
-                    Text(data.deweyDecimalNumber)
+                    if(data.deweyDecimalNumber != 0) {
+                        Text(bookNumber)
+                    }
+                    
                 }.rotationEffect(Angle(degrees: 90))
                 Text(data.authorName)
                 Text(data.bookTitle).bold()
@@ -39,6 +60,6 @@ struct BookView_Previews: PreviewProvider {
     
     static var previews: some View {
         let grayColor = ColorCodable(id: UUID(), red: 0.5, green: 0.5, blue: 0.5)
-        BookView(data: Book(id: UUID(), bookTitle: "TEST", bookColor: grayColor, authorName: "Bobby Tables", callID: "BOB", deweyDecimalNumber: "13.118"))
+        BookView(data: Book(id: UUID(), bookTitle: "TEST", bookColor: grayColor, authorName: "Bobby Tables", callID: "BOB", deweyDecimalNumber: 013.27))
     }
 }
