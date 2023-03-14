@@ -24,7 +24,7 @@ struct GameView: View {
                     //drag and drop implemented through a dropDestination modifier/View thingy. works!
                     
                     Button("Check?") {
-                        isInOrder = bookInfo.checkForDeweyOrder()   
+                        isInOrder = bookInfo.checkForDeweyOrder()
                     }
                     
                     if(isInOrder) {
@@ -68,19 +68,15 @@ struct GameView: View {
                     
                 }.padding(0.0)
                     .frame(height: 300)
-                .rotationEffect(Angle(degrees: -90))
+                    .rotationEffect(Angle(degrees: -90))
                 
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
         }
         //.overlay(content: WinView())
-        /*
         .sheet(isPresented: $isInOrder) {
             WinView()
         }
-         */
-        
-        
     }
     
 }

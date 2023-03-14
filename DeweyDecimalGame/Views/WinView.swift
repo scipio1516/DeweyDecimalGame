@@ -17,7 +17,7 @@ struct WinView: View {
                 Text("You Win!")
                     .font(.title)
                     .fontWeight(.bold)
-                NavigationLink(destination: ContentView(),
+                NavigationLink(destination: LevelSelect(),
                                label: {MainButton(text: "Restart Game")})
                 .font(.title2)
                 .fontWeight(.bold)
