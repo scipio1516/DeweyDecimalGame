@@ -41,14 +41,14 @@ struct BookView: View {
                     }
                     
                 }.rotationEffect(Angle(degrees: 90))
-                Text(data.authorName)
-                Text(data.bookTitle).bold()
+                Text(data.authorName).frame(width: 100)
+                Text(data.bookTitle).bold().frame(width: 100)
                 
                 
             }
                 
             
-        }.frame(width: 250, height: 60)
+        }.frame(width: 300, height: 72)
             .draggable(data)
         
             
