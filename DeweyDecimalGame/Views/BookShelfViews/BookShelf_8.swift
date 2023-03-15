@@ -25,7 +25,7 @@ struct BookShelf_8: View {
                         .overlay(RoundedRectangle(cornerRadius: 3).stroke(Color.brown, lineWidth: 3))
                         .rotationEffect(Angle(degrees: -90))
                     
-                    Path() { path in // 1 // 95 apart
+                    Path() { path in // 1 
                         path.move(to: CGPoint(x: 800, y: 80))
                         path.addLine(to: CGPoint(x: 800, y: 85))
                         path.addLine(to: CGPoint(x: 20, y: 85))
