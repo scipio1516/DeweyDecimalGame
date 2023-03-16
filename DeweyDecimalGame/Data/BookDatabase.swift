@@ -16,6 +16,9 @@ var yellowColor = ColorCodable(id: UUID(), red: 1.0, green: 1.0, blue: 0.0)
 var greyColor = ColorCodable(id: UUID(), red: 0.5, green: 0.5, blue: 0.5)
 
 var nonfictionBookDatabase: [Book] = [
+    Book(id: UUID(), bookTitle: "BookOne", bookColor: redColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: 33.333),
+    Book(id: UUID(), bookTitle: "BookTwo", bookColor: greenColor, authorName: "Author Two", callID: "AUT", deweyDecimalNumber: 23.333),
+    Book(id: UUID(), bookTitle: "BookThree", bookColor: pureBlueColor, authorName: "Author Three", callID: "AUT", deweyDecimalNumber: 13.333),
     Book(bookTitle: "Wizard Book", bookColor: pureBlueColor, authorName: "H. Abelson & G. Sussman", callID: "ABE", deweyDecimalNumber: 069.32),
     
 ]

@@ -9,14 +9,13 @@ import SwiftUI
 
 
 struct GameView: View {
-    
-    @State var bookShelf: [Book]
+    @State var bookshelfLength: Int
     @State var isDeweyOrNot: Bool
     @State var isInOrder = false
+    @State var bookInfo = BookData(bookArray: [], isDewey: true)
     var body: some View {
-        let bookInfo = BookData(bookArray: bookShelf)
-        NavigationView {
-            
+        
+         NavigationView {
             VStack(spacing: 0) {
                 VStack {
                     //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property carrying their data. NOTE: does not work in preview, does work in simulator.
@@ -42,25 +41,28 @@ struct GameView: View {
                     }
                     
                 }.padding(0)
+                    .onAppear() {
+                        bookInfo = BookData(dataLength: bookshelfLength, isDewey: isDeweyOrNot)
+                    }
                 
                 VStack {
                     //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property carrying their data. NOTE: does not work in preview, does work in simulator.
                     
                     //drag and drop implemented through a dropDestination modifier/View thingy. works!
-                    ForEach(bookShelf) { shelf in
+                    ForEach(bookInfo.bookArray) { shelf in
                         BookView(data: shelf)
                             .dropDestination(for: Book.self) {tempBook, location in
                                 
                                 //currently searching through the bookshelf to get locations, might want a more efficient way of keeping track?
-                                let previousLocation = bookShelf.firstIndex(where: {anotherBook in
+                                let previousLocation = bookInfo.bookArray.firstIndex(where: {anotherBook in
                                     return tempBook[0] == anotherBook
                                 })
                                 
-                                let newLocation = (bookShelf.firstIndex(where: { newBookLocation in
+                                let newLocation = (bookInfo.bookArray.firstIndex(where: { newBookLocation in
                                     return shelf == newBookLocation
                                 }) ?? previousLocation)
-                                bookShelf.remove(at: previousLocation ?? 0)
-                                bookShelf.insert(tempBook[0], at: newLocation ?? 0)
+                                bookInfo.bookArray.remove(at: previousLocation ?? 0)
+                                bookInfo.bookArray.insert(tempBook[0], at: newLocation ?? 0)
                                 
                                 return true
                             }
@@ -83,7 +85,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        var temp = [Book(id: UUID(), bookTitle: "BookOne", bookColor: redColor, authorName: "Author One", callID: "AUT", deweyDecimalNumber: 33.333), Book(id: UUID(), bookTitle: "BookTwo", bookColor: greenColor, authorName: "Author Two", callID: "AUT", deweyDecimalNumber: 23.333), Book(id: UUID(), bookTitle: "BookThree", bookColor: pureBlueColor, authorName: "Author Three", callID: "AUT", deweyDecimalNumber: 13.333)]
-        GameView(bookShelf: fictionBookDatabase, isDeweyOrNot: false)
+        GameView(bookshelfLength: 8, isDeweyOrNot: false)
     }
 }
