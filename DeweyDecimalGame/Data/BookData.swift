@@ -7,11 +7,33 @@
 
 import Foundation
 
-class BookData {
+struct BookData {
+    var dataLength: Int
+    var isDewey: Bool
     var bookArray: [Book]
     
-    init(bookArray: [Book]) {
+    init(bookArray: [Book], isDewey: Bool) {
         self.bookArray = bookArray
+        self.isDewey = isDewey
+        dataLength = bookArray.count
+    }
+    
+    init(dataLength: Int, isDewey: Bool) {
+        self.dataLength = dataLength
+        self.isDewey = isDewey
+        bookArray = []
+        
+        fictionBookDatabase.shuffle()
+        nonfictionBookDatabase.shuffle()
+        
+        for i in 0 ..< dataLength {
+            if(isDewey) {
+                bookArray.append(nonfictionBookDatabase[i])
+            }
+            else {
+                bookArray.append(fictionBookDatabase[i])
+            }
+        }
     }
     
     func compareAlphabetical(i: Int) -> Bool {

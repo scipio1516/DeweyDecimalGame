@@ -10,7 +10,7 @@ import Foundation
 //colors!
 var greenColor = ColorCodable(id: UUID(), red: 0.1, green: 0.7, blue: 0.4)
 var redColor = ColorCodable(id: UUID(), red: 0.7, green: 0.1, blue: 0.1)
-var extraColor = ColorCodable(id: UUID(), red: 0.55, green: 0.35, blue: 0.67)
+var extraColor = ColorCodable(id: UUID(), red: 0.35, green: 0.35, blue: 0.67)
 var pureBlueColor = ColorCodable(id: UUID(), red: 0.0, green: 0.45, blue: 1.0)
 var yellowColor = ColorCodable(id: UUID(), red: 1.0, green: 1.0, blue: 0.0) // remove
 var greyColor = ColorCodable(id: UUID(), red: 0.5, green: 0.5, blue: 0.5) // remove
