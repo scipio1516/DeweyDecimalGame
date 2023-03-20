@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct LevelSelect: View {
+    
     var body: some View {
         HStack {
             VStack {
-                Text("Order by Author name")
+                Text("Order by Call ID.")
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding()
+                
                 NavigationLink(destination: GameView(bookshelfLength: 3, isDeweyOrNot: false),
                                label: {MainButton(text: "Three Books")})
                 .fontWeight(.bold)
@@ -25,10 +27,11 @@ struct LevelSelect: View {
                  
             }
             VStack {
-                Text("Order by Call Number")
+                Text("Order by Dewey Decimal Number.")
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding()
+                
                 NavigationLink(destination: GameView(bookshelfLength: 3, isDeweyOrNot: true),
                                label: {MainButton(text: "Three Books")})
                 .fontWeight(.bold)
@@ -45,6 +48,6 @@ struct LevelSelect: View {
 
 struct LevelSelect_Previews: PreviewProvider {
     static var previews: some View {
-        LevelSelect()
+        LevelSelect().environmentObject(UserData(username: "Default"))
     }
 }
