@@ -17,6 +17,7 @@
 		6E6B0358299156E100E642EC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B0357299156E100E642EC /* GameView.swift */; };
 		6E6B035A29915C1000E642EC /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B035929915C1000E642EC /* BookView.swift */; };
 		6E6B035E29954CD600E642EC /* BookTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B035D29954CD600E642EC /* BookTemplate.swift */; };
+		6E7B9A0929C8A88D006C61F2 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B9A0829C8A88D006C61F2 /* UserData.swift */; };
 		6EADD50329A51BC10070F2FB /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EADD50229A51BC10070F2FB /* BookData.swift */; };
 		6EE58771298030A2003A3AF6 /* DeweyDecimalGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE58770298030A2003A3AF6 /* DeweyDecimalGameApp.swift */; };
 		6EE58773298030A2003A3AF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE58772298030A2003A3AF6 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		6E6B035929915C1000E642EC /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		6E6B035D29954CD600E642EC /* BookTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTemplate.swift; sourceTree = "<group>"; };
 		6E6B035F2996A2D700E642EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6E7B9A0829C8A88D006C61F2 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		6EADD50229A51BC10070F2FB /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
 		6EE5876D298030A2003A3AF6 /* DeweyDecimalGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeweyDecimalGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE58770298030A2003A3AF6 /* DeweyDecimalGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeweyDecimalGameApp.swift; sourceTree = "<group>"; };
@@ -80,7 +82,6 @@
 				6E6B0357299156E100E642EC /* GameView.swift */,
 				6E3621DE29AE59F6007CC3FC /* LevelSelect.swift */,
 				6E6B035929915C1000E642EC /* BookView.swift */,
-				2FAE520C299E7FDA004B59B5 /* bookShelf.swift */,
 				974225C829A7BDF700DF76F9 /* WinView.swift */,
 			);
 			path = Views;
@@ -92,6 +93,7 @@
 				6E6B035D29954CD600E642EC /* BookTemplate.swift */,
 				6EADD50229A51BC10070F2FB /* BookData.swift */,
 				6E5B376729B63E9B0003790A /* BookDatabase.swift */,
+				6E7B9A0829C8A88D006C61F2 /* UserData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -208,6 +210,7 @@
 				2FAE521B29B100DD004B59B5 /* BookShelf_5.swift in Sources */,
 				2FAE521F29B100F9004B59B5 /* BookShelf_3.swift in Sources */,
 				2FAE521929B100CF004B59B5 /* BookShelf_8.swift in Sources */,
+				6E7B9A0929C8A88D006C61F2 /* UserData.swift in Sources */,
 				97E7BE0B2992C51B004795A0 /* InstructionsView.swift in Sources */,
 				6E5B376829B63E9B0003790A /* BookDatabase.swift in Sources */,
 				6E3621DF29AE59F6007CC3FC /* LevelSelect.swift in Sources */,

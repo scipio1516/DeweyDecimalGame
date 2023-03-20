@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var username = ""
     var body: some View {
         NavigationView {
             VStack(spacing: 40) {
@@ -16,11 +17,18 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
 
-                    NavigationLink(destination: LevelSelect(),
-                                   label: {MainButton(text: "Level Select")})
+                    HStack {
+                        Text("Enter Username: ")
+                        TextField("John Doe", text: $username).frame(width: 120)
+                    }.font(.title2)
+                    
+                    if(!username.isEmpty) {
+                        NavigationLink(destination: LevelSelect(),
+                                       label: {MainButton(text: "Level Select")})
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding()
+                    }
                     NavigationLink(destination: InstructionsView(),
                                    label: {MainButton(text: "Instructions")})
                         .font(.title2)
@@ -32,7 +40,7 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
-        }
+        }.environmentObject(UserData(username: username))
         
     }
 }

@@ -14,9 +14,10 @@ var extraColor = ColorCodable(id: UUID(), red: 0.35, green: 0.35, blue: 0.67)
 var pureBlueColor = ColorCodable(id: UUID(), red: 0.0, green: 0.45, blue: 1.0)
 var yellowColor = ColorCodable(id: UUID(), red: 1.0, green: 1.0, blue: 0.0) // remove
 var greyColor = ColorCodable(id: UUID(), red: 0.5, green: 0.5, blue: 0.5) // remove
+var whiteColor = ColorCodable(id: UUID(), red: 1.0, green: 1.0, blue: 1.0) //text color mostly
 
 var nonfictionBookDatabase: [Book] = [
-    Book(bookTitle: "Wizard Book", bookColor: greenColor, authorName: "H. Abelson & G. Sussman", callID: "ABE", deweyDecimalNumber: 069.32), // 1
+    Book(bookTitle: "Wizard Book", bookColor: greenColor, authorName: "Hal Abelson", callID: "ABE", deweyDecimalNumber: 069.32), // 1
     Book(bookTitle: "Behind the Door", bookColor: pureBlueColor, authorName: "Xavier Gonzales", callID: "GON", deweyDecimalNumber: 083.92), // 2
     Book(bookTitle: "Innocent Eyes", bookColor: redColor, authorName: "Gael Spade", callID: "SPA", deweyDecimalNumber: 098.54), // 3
     Book(bookTitle: "Bad Surprise", bookColor: pureBlueColor, authorName: "Dominic Finch", callID: "FIN", deweyDecimalNumber: 204.29), // 4
