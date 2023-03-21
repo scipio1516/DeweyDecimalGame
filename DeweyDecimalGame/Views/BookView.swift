@@ -45,7 +45,7 @@ struct BookView: View {
                 Text(data.bookTitle).bold().frame(width: 100)
                 
                 
-            }
+            }.foregroundColor(data.textColor.createColor())
                 
             
         }.frame(width: 300, height: 72)
@@ -59,7 +59,7 @@ struct BookView: View {
 struct BookView_Previews: PreviewProvider {
     
     static var previews: some View {
-       // let grayColor = ColorCodable(id: UUID(), red: 0.5, green: 0.5, blue: 0.5)
-        BookView(data: Book(id: UUID(), bookTitle: "TEST", bookColor: turquoiseColor, authorName: "Bobby Tables", callID: "BOB", deweyDecimalNumber: 013.27))
+        let grayColor = ColorCodable(id: UUID(), red: 0.5, green: 0.5, blue: 0.5)
+        BookView(data: Book(id: UUID(), bookTitle: "TEST", bookColor: grayColor,textColor: ColorCodable(id: UUID(), red: 1.0, green: 1.0, blue: 1.0), authorName: "Bobby Tables", callID: "BOB", deweyDecimalNumber: 013.27))
     }
 }

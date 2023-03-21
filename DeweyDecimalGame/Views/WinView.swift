@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct WinView: View {
+    @EnvironmentObject var data: UserData
     var body: some View {
         NavigationView {
             VStack {
-                Text("Congratulations")
+                Text("Congratulations, \(data.username)!")
                     .font(.title)
                     .fontWeight(.bold)
                 Text("You Win!")
@@ -34,6 +35,6 @@ struct WinView: View {
 
 struct WinView_Previews: PreviewProvider {
     static var previews: some View {
-        WinView()
+        WinView().environmentObject(UserData(username: "John Doe"))
     }
 }

@@ -8,32 +8,37 @@
 import SwiftUI
 
 struct LevelSelect: View {
+    
     var body: some View {
         HStack {
             VStack {
-                Text("Order by Author name.")
+                Text("Order by Call ID.")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding()
+                
                 NavigationLink(destination: GameView(bookshelfLength: 3, isDeweyOrNot: false),
                                label: {MainButton(text: "Three Books")})
-                NavigationLink(destination: BookShelf_4(),
-                               label: {MainButton(text: "Four Books")})
-                NavigationLink(destination: BookShelf_5(),
-                               label: {MainButton(text: "Five Books")})
-                Text("Ultimate Challenge!")
+                .fontWeight(.bold)
                 NavigationLink(destination: GameView(bookshelfLength: 8, isDeweyOrNot: false),
                                label: {MainButton(text: "Eight Books")})
+                .fontWeight(.bold)
+                .padding()
                  
             }
             VStack {
-                Text("Order by Call Number.")
+                Text("Order by Dewey Decimal Number.")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding()
+                
                 NavigationLink(destination: GameView(bookshelfLength: 3, isDeweyOrNot: true),
                                label: {MainButton(text: "Three Books")})
-                NavigationLink(destination: BookShelf_4(),
-                               label: {MainButton(text: "Four Books")})
-                NavigationLink(destination: BookShelf_5(),
-                               label: {MainButton(text: "Five Books")})
-                Text("Ultimate Challenge!")
+                .fontWeight(.bold)
                 NavigationLink(destination: BookShelf_8(),
                                label: {MainButton(text: "Eight Books")})
+                .fontWeight(.bold)
+                .padding()
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
@@ -43,6 +48,6 @@ struct LevelSelect: View {
 
 struct LevelSelect_Previews: PreviewProvider {
     static var previews: some View {
-        LevelSelect()
+        LevelSelect().environmentObject(UserData(username: "Default"))
     }
 }

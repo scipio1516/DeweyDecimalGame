@@ -44,6 +44,7 @@ struct Book:  Identifiable, Codable, Transferable, Equatable {
     
     var bookTitle: String
     var bookColor: ColorCodable
+    var textColor = ColorCodable(id: UUID(), red: 0.0, green: 0.0, blue: 0.0)
     var authorName: String
     var callID: String
     var deweyDecimalNumber: Double
