@@ -15,6 +15,7 @@ struct GameView: View {
     @State var bookInfo = BookData(bookArray: [], isDewey: true)
     var body: some View {
         
+        
          NavigationView {
             VStack(spacing: 0) {
                 VStack {
@@ -22,23 +23,11 @@ struct GameView: View {
                     
                     //drag and drop implemented through a dropDestination modifier/View thingy. works!
                     
-                    Button("Check?") {
-                        isInOrder = bookInfo.checkForDeweyOrder()
-                    }
-                    
-                    if(isInOrder) {
-                        if(isDeweyOrNot) {
-                            Text("Books are in Dewey Decimal order by author name!")
-                                .font(.subheadline)
+                    MainButton(text: "Check!")
+                        .onTapGesture {
+                            isInOrder = bookInfo.checkForDeweyOrder()
                         }
-                        else {
-                            Text("Books are in Alphabetical order by author name!")
-                                .font(.subheadline)
-                        }
-                    } else {
-                        Text("Books are not in order.")
-                            .font(.subheadline)
-                    }
+                        .padding()
                     
                 }.padding(0)
                     .onAppear() {
