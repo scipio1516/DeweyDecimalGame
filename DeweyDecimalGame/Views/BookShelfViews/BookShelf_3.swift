@@ -19,7 +19,7 @@ struct BookShelf_3: View {
 
                     
                     Rectangle()
-                        .frame(width: 340, height: 240)
+                        .frame(width: 360, height: 230)
                         .foregroundColor(Color.brown.opacity(0.0))
                         .overlay(RoundedRectangle(cornerRadius: 3).stroke(Color.brown, lineWidth: 5))
                         .rotationEffect(Angle(degrees: -90))

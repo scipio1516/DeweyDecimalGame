@@ -15,60 +15,50 @@ struct BookShelf_5: View {
             VStack(spacing: 20) {
                 ZStack {
                     
-                    /*  Rectangle()
-                     .frame(width: 350, height: 120)
-                     .rotationEffect(Angle(degrees: -90)) */
+                    GameView(bookshelfLength: 5, isDeweyOrNot: false)
                     
                     Rectangle()
-                        .frame(width: 350, height: 700)
+                        .frame(width: 360, height: 398)
                         .foregroundColor(Color.brown.opacity(0.0))
-                        .overlay(RoundedRectangle(cornerRadius: 3).stroke(Color.brown, lineWidth: 3))
+                        .overlay(RoundedRectangle(cornerRadius: 3).stroke(Color.brown, lineWidth: 5))
                         .rotationEffect(Angle(degrees: -90))
                     
                     Path() { path in // 1
-                        path.move(to: CGPoint(x: 800, y: 120))
-                        path.addLine(to: CGPoint(x: 800, y: 125))
-                        path.addLine(to: CGPoint(x: 20, y: 125))
-                        path.addLine(to: CGPoint(x: 20, y: 120))
+                        path.move(to: CGPoint(x: 800, y: 317))
+                        path.addLine(to: CGPoint(x: 800, y: 322))
+                        path.addLine(to: CGPoint(x: 20, y: 322))
+                        path.addLine(to: CGPoint(x: 20, y: 317))
                     }
                     .foregroundColor(Color.brown.opacity(2.0))
                     .rotationEffect(Angle(degrees: -90))
                     
                     Path() { path in // 2
-                        path.move(to: CGPoint(x: 800, y: 240))
-                        path.addLine(to: CGPoint(x: 800, y: 245))
-                        path.addLine(to: CGPoint(x: 20, y: 245))
-                        path.addLine(to: CGPoint(x: 20, y: 240))
+                        path.move(to: CGPoint(x: 800, y: 237))
+                        path.addLine(to: CGPoint(x: 800, y: 242))
+                        path.addLine(to: CGPoint(x: 20, y: 242))
+                        path.addLine(to: CGPoint(x: 20, y: 237))
                     }
                     .foregroundColor(Color.brown.opacity(2.0))
                     .rotationEffect(Angle(degrees: -90))
                     
                     Path() { path in // 3
-                        path.move(to: CGPoint(x: 800, y: 360))
-                        path.addLine(to: CGPoint(x: 800, y: 365))
-                        path.addLine(to: CGPoint(x: 20, y: 365))
-                        path.addLine(to: CGPoint(x: 20, y: 360))
+                        path.move(to: CGPoint(x: 800, y: 156))
+                        path.addLine(to: CGPoint(x: 800, y: 161))
+                        path.addLine(to: CGPoint(x: 20, y: 161))
+                        path.addLine(to: CGPoint(x: 20, y: 156))
                     }
                     .foregroundColor(Color.brown.opacity(2.0))
                     .rotationEffect(Angle(degrees: -90))
                     
                     Path() { path in // 4
-                        path.move(to: CGPoint(x: 800, y: 480))
-                        path.addLine(to: CGPoint(x: 800, y: 485))
-                        path.addLine(to: CGPoint(x: 20, y: 485))
-                        path.addLine(to: CGPoint(x: 20, y: 480))
+                        path.move(to: CGPoint(x: 800, y: 77))
+                        path.addLine(to: CGPoint(x: 800, y: 82))
+                        path.addLine(to: CGPoint(x: 20, y: 82))
+                        path.addLine(to: CGPoint(x: 20, y: 77))
                     }
                     .foregroundColor(Color.brown.opacity(2.0))
                     .rotationEffect(Angle(degrees: -90))
                     
-                    Path() { path in // 5
-                        path.move(to: CGPoint(x: 800, y: 600))
-                        path.addLine(to: CGPoint(x: 800, y: 605))
-                        path.addLine(to: CGPoint(x: 20, y: 605))
-                        path.addLine(to: CGPoint(x: 20, y: 600))
-                    }
-                    .foregroundColor(Color.brown.opacity(2.0))
-                    .rotationEffect(Angle(degrees: -90))
                 }
             }
         }
