@@ -21,19 +21,27 @@ struct ContentView: View {
                         Text("Enter Username: ")
                         TextField("John Doe", text: $username).frame(width: 120)
                     }.font(.title2)
-                    
-                    if(!username.isEmpty) {
-                        NavigationLink(destination: LevelSelect(),
-                                       label: {MainButton(text: "Level Select")})
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding()
-                    }
                     NavigationLink(destination: InstructionsView(),
                                    label: {MainButton(text: "Instructions")})
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding()
+                    if(username.isEmpty) {
+                        NavigationLink(destination: LevelSelect(),
+                                       label: {MainButton(text: "Level Select")})
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(0)
+                        .opacity(0)
+                    }
+                    else {
+                        NavigationLink(destination: LevelSelect(),
+                                       label: {MainButton(text: "Level Select")})
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(0)
+                    }
+                    
                 }
                 
                 

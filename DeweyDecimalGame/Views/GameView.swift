@@ -40,6 +40,8 @@ struct GameView: View {
                     //drag and drop implemented through a dropDestination modifier/View thingy. works!
                     ForEach(bookInfo.bookArray) { shelf in
                         BookView(data: shelf)
+//                            .position(x: bookList[i].xPosition, y: 300 - (bookList[i].height / 2))
+
                             .dropDestination(for: Book.self) {tempBook, location in
                                 
                                 //currently searching through the bookshelf to get locations, might want a more efficient way of keeping track?
@@ -55,6 +57,7 @@ struct GameView: View {
                                 
                                 return true
                             }
+                        
                     }
                     
                 }.padding(0.0)
