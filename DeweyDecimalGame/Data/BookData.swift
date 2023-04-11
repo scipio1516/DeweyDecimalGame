@@ -11,6 +11,7 @@ struct BookData {
     var dataLength: Int
     var isDewey: Bool
     var bookArray: [Book]
+    var difficultVersion = false
     
     init(bookArray: [Book], isDewey: Bool) {
         self.bookArray = bookArray
@@ -34,6 +35,20 @@ struct BookData {
                 bookArray.append(fictionBookDatabase[i])
             }
         }
+    }
+    
+    init(dataLength: Int, isDewey: Bool, difficultVersion: Bool) {
+        self.init(dataLength: dataLength, isDewey: isDewey)
+        
+        if(difficultVersion) {
+            if(isDewey) {
+                
+            }
+            else {
+                
+            }
+        }
+        
     }
     
     func compareAlphabetical(i: Int) -> Bool {
