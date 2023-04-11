@@ -17,10 +17,10 @@ struct LevelSelect: View {
                     .fontWeight(.bold)
                     .padding()
                 
-                NavigationLink(destination: GameView(bookshelfLength: 3, isDeweyOrNot: false),
+                NavigationLink(destination: BookShelf_3(),
                                label: {MainButton(text: "Three Books")})
                 .fontWeight(.bold)
-                NavigationLink(destination: GameView(bookshelfLength: 8, isDeweyOrNot: false),
+                NavigationLink(destination:  BookShelf_8(),
                                label: {MainButton(text: "Eight Books")})
                 .fontWeight(.bold)
                 .padding()
@@ -32,10 +32,10 @@ struct LevelSelect: View {
                     .fontWeight(.bold)
                     .padding()
                 
-                NavigationLink(destination: BookShelf_3(),
+                NavigationLink(destination: BookShelf_3_True(),
                                label: {MainButton(text: "Three Books")})
                 .fontWeight(.bold)
-                NavigationLink(destination: GameView(bookshelfLength: 8, isDeweyOrNot: true),
+                NavigationLink(destination: BookShelf_8_True(),
                                label: {MainButton(text: "Eight Books")})
                 .fontWeight(.bold)
                 .padding()
