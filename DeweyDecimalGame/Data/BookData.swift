@@ -42,7 +42,10 @@ struct BookData {
         
         if(difficultVersion) {
             if(isDewey) {
-                
+                for index in 0..<(bookArray.count/3 + 1) {
+                    bookArray[index].deweyDecimalNumber = bookArray[0].deweyDecimalNumber
+                }
+                bookArray.shuffle()
             }
             else {
                 
