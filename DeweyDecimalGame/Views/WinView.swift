@@ -9,15 +9,21 @@ import SwiftUI
 
 struct WinView: View {
     @EnvironmentObject var data: UserData
+    @State var date = Date.now
+
     var body: some View {
         NavigationView {
             VStack {
-                Text("Congratulations, \(data.username)!")
+                Text("Congratulations, \(data.username)")
                     .font(.title)
                     .fontWeight(.bold)
                 Text("You Win!")
                     .font(.title)
                     .fontWeight(.bold)
+                Text("Completion Date:\n \(date.formatted(date: .abbreviated, time: .shortened))")
+                    .multilineTextAlignment(.center)
+                    .font(.title3)
+                    .padding()
                 NavigationLink(destination: LevelSelect(),
                                label: {MainButton(text: "Restart Game")})
                 .font(.title2)
@@ -38,3 +44,9 @@ struct WinView_Previews: PreviewProvider {
         WinView().environmentObject(UserData(username: "John Doe"))
     }
 }
+/*
+struct ListItem : Identifiable, Codable {
+    var id = UUID()
+    var dueDate = Date()
+}
+*/

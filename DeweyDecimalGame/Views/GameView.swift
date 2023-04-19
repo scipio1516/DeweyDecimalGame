@@ -80,3 +80,9 @@ struct GameView_Previews: PreviewProvider {
         GameView(bookshelfLength: 8, isDeweyOrNot: false)
     }
 }
+
+struct ListItem : Identifiable, Codable {
+    var id = UUID()
+    var course = String()
+    var dueDate = Date()
+}
