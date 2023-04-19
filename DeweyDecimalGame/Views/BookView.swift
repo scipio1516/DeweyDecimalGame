@@ -32,7 +32,7 @@ struct BookView: View {
         ZStack {
             Rectangle()
                 .fill(data.bookColor.createColor())
-                
+            
             HStack {
                 VStack {
                     Text(data.callID)
@@ -46,13 +46,18 @@ struct BookView: View {
                 
                 
             }.foregroundColor(data.textColor.createColor())
-                
+            
             
         }.frame(width: 300, height: 72)
-            .draggable(data)
+            .draggable(data, preview: {
+                    Rectangle()
+                        .background(data.textColor.createColor())
+                        .foregroundColor(data.textColor.createColor())
+                        .frame(width: 72, height: 300)
+            })
         
-            
-            
+        
+        
     }
 }
 

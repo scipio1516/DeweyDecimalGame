@@ -12,6 +12,7 @@ struct GameView: View {
     @State var bookshelfLength: Int
     @State var isDeweyOrNot: Bool
     @State var isInOrder = false
+    @State var isDifficult = false
     @State var bookInfo = BookData(bookArray: [], isDewey: true)
     var body: some View {
         
@@ -31,7 +32,7 @@ struct GameView: View {
                     
                 }.padding(0)
                     .onAppear() {
-                        bookInfo = BookData(dataLength: bookshelfLength, isDewey: isDeweyOrNot)
+                        bookInfo = BookData(dataLength: bookshelfLength, isDewey: isDeweyOrNot, difficultVersion: isDifficult)
                     }
                 
                 VStack {
@@ -77,7 +78,7 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(bookshelfLength: 8, isDeweyOrNot: false)
+        GameView(bookshelfLength: 8, isDeweyOrNot: false, isDifficult: true)
     }
 }
 
