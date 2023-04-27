@@ -9,12 +9,13 @@ import SwiftUI
 
 struct BookShelf_8_True: View {
     @State private var rotation = 0.0
+    @State var difficulty: Bool
     var body: some View {
         VStack(spacing: 40) {
             VStack(spacing: 20) {
                 ZStack {
                     
-                    GameView(bookshelfLength: 8, isDeweyOrNot: true, isDifficult: true)
+                    GameView(bookshelfLength: 8, isDeweyOrNot: true, isDifficult: difficulty)
                      //   .position(x: 425, y: 275)
               // move the entire bookshelf down
                     
