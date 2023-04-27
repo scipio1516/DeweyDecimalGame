@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LevelSelect: View {
-    
+    @EnvironmentObject var data: UserData
     var body: some View {
         HStack {
             VStack {
@@ -35,7 +35,7 @@ struct LevelSelect: View {
                 NavigationLink(destination: BookShelf_8_True(difficulty: false),
                                label: {MainButton(text: "Easy")})
                 .fontWeight(.bold)
-                NavigationLink(destination: BookShelf_8_True(difficulty: true),
+                NavigationLink(destination: BookShelf_8_True(difficulty: true).environmentObject(data),
                                label: {MainButton(text: "Hard")})
                 .fontWeight(.bold)
                 .padding()

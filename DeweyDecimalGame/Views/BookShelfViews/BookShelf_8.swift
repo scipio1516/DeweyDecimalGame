@@ -102,6 +102,6 @@ struct BookShelf_8: View {
 
 struct BookShelf_8_Previews: PreviewProvider {
     static var previews: some View {
-        BookShelf_8()
+        BookShelf_8(difficulty: false)
     }
 }

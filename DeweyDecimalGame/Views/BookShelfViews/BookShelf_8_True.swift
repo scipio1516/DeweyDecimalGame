@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct BookShelf_8_True: View {
+    @EnvironmentObject var data: UserData
     @State private var rotation = 0.0
     @State var difficulty: Bool
     var body: some View {
+        
         VStack(spacing: 40) {
             VStack(spacing: 20) {
                 ZStack {
-                    
-                    GameView(bookshelfLength: 8, isDeweyOrNot: true, isDifficult: difficulty)
+                        GameView(bookshelfLength: 8, isDeweyOrNot: true, isDifficult: difficulty)
                      //   .position(x: 425, y: 275)
               // move the entire bookshelf down
                     
@@ -101,6 +102,6 @@ struct BookShelf_8_True: View {
 
 struct BookShelf_8_True_Previews: PreviewProvider {
     static var previews: some View {
-        BookShelf_8_True()
+        BookShelf_8_True(difficulty: true).environmentObject(UserData(username: "Default"))
     }
 }

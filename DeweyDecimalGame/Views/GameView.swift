@@ -9,15 +9,16 @@ import SwiftUI
 
 
 struct GameView: View {
+    @EnvironmentObject var data: UserData
     @State var bookshelfLength: Int
     @State var isDeweyOrNot: Bool
     @State var isInOrder = false
     @State var isDifficult = false
-    @State var bookInfo = BookData(bookArray: [], isDewey: true)
+    @State var levelNumber = 0
     var body: some View {
         
         
-         NavigationView {
+        NavigationView {
             VStack(spacing: 0) {
                 VStack {
                     //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property carrying their data. NOTE: does not work in preview, does work in simulator.
@@ -26,35 +27,57 @@ struct GameView: View {
                     
                     MainButton(text: "Check!")
                         .onTapGesture {
-                            isInOrder = bookInfo.checkForDeweyOrder()
+                            isInOrder = BookData(bookArray: data.allLevels[levelNumber], isDewey: isDeweyOrNot).checkForDeweyOrder()
                         }
                         .padding()
                     
                 }.padding(0)
+                //deranged nested if statements, 8 possible options for handling this
+                //first, separate into dewey or not
+                //then easy vs hard versions
+                //finally check if its already got something there
                     .onAppear() {
-                        bookInfo = BookData(dataLength: bookshelfLength, isDewey: isDeweyOrNot, difficultVersion: isDifficult)
+                        if(isDeweyOrNot) {
+                            if(isDifficult) {
+                                levelNumber = 1
+                            }
+                            else {
+                                levelNumber = 0
+                            }
+                        }
+                        else {
+                            if(isDifficult) {
+                                levelNumber = 3
+                            }
+                            else {
+                                levelNumber = 2
+                            }
+                        }
+                        if(data.allLevels[levelNumber].isEmpty) {
+                            data.allLevels[levelNumber] = BookData(dataLength: bookshelfLength, isDewey: isDeweyOrNot, difficultVersion: isDifficult).bookArray
+                        }
                     }
                 
                 VStack {
                     //Currently: Books are a custom view, taking from a custom struct, and have the ondrag property carrying their data. NOTE: does not work in preview, does work in simulator.
                     
                     //drag and drop implemented through a dropDestination modifier/View thingy. works!
-                    ForEach(bookInfo.bookArray) { shelf in
+                    ForEach(data.allLevels[levelNumber]) { shelf in
                         BookView(data: shelf)
-//                            .position(x: bookList[i].xPosition, y: 300 - (bookList[i].height / 2))
-
+                        //                            .position(x: bookList[i].xPosition, y: 300 - (bookList[i].height / 2))
+                        
                             .dropDestination(for: Book.self) {tempBook, location in
                                 
                                 //currently searching through the bookshelf to get locations, might want a more efficient way of keeping track?
-                                let previousLocation = bookInfo.bookArray.firstIndex(where: {anotherBook in
+                                let previousLocation = data.allLevels[levelNumber].firstIndex(where: {anotherBook in
                                     return tempBook[0] == anotherBook
                                 })
                                 
-                                let newLocation = (bookInfo.bookArray.firstIndex(where: { newBookLocation in
+                                let newLocation = (data.allLevels[levelNumber].firstIndex(where: { newBookLocation in
                                     return shelf == newBookLocation
                                 }) ?? previousLocation)
-                                bookInfo.bookArray.remove(at: previousLocation ?? 0)
-                                bookInfo.bookArray.insert(tempBook[0], at: newLocation ?? 0)
+                                data.allLevels[levelNumber].remove(at: previousLocation ?? 0)
+                                data.allLevels[levelNumber].insert(tempBook[0], at: newLocation ?? 0)
                                 
                                 return true
                             }

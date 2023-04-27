@@ -19,6 +19,11 @@ struct BookData {
         dataLength = bookArray.count
     }
     
+    init(bookArray: [Book], isDewey: Bool, isDifficult: Bool) {
+        self.init(bookArray: bookArray, isDewey: isDewey)
+        difficultVersion = isDifficult
+    }
+    
     init(dataLength: Int, isDewey: Bool) {
         self.dataLength = dataLength
         self.isDewey = isDewey
