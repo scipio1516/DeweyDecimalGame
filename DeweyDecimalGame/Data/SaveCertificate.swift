@@ -30,8 +30,5 @@ class CertificateList : ObservableObject {
 
 struct Certificate : Identifiable, Codable {
     var id = UUID()
-    var attempts : Int
-    var name : String
     var time : Date
-    var type : String
 }

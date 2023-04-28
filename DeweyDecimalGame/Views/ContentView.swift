@@ -41,7 +41,11 @@ struct ContentView: View {
                         .fontWeight(.bold)
                         .padding(0)
                     }
-                    
+                    /*NavigationLink(destination: SavedCertificates(certificateList: CertificateList()),
+                                   label: {MainButton(text: "Level Select")})
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(0)*/
                 }
                 
                 

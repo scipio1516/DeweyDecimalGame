@@ -15,7 +15,7 @@ struct BookShelf_5: View {
             VStack(spacing: 20) {
                 ZStack {
                     
-                    GameView(bookshelfLength: 5, isDeweyOrNot: false)
+                    GameView(bookshelfLength: 5, isDeweyOrNot: false, certificateList: CertificateList())
                        // .position(x: 425, y: 185)
                     
                     Rectangle()

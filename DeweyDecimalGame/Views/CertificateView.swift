@@ -4,7 +4,7 @@
 //
 //  Created by Dylan Koehler on 4/19/23.
 //
-/*
+
 import SwiftUI
 
 struct CertificateView: View {
@@ -37,7 +37,7 @@ struct CertificateView: View {
 
 struct CertificateView_Previews: PreviewProvider {
     static var previews: some View {
-        CertificateView(UserData(username: "John Doe"))
+        CertificateView().environmentObject(UserData(username: "John Doe"))
     }
 }
-*/
+

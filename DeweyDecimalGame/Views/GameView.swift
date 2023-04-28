@@ -14,6 +14,7 @@ struct GameView: View {
     @State var isInOrder = false
     @State var isDifficult = false
     @State var bookInfo = BookData(bookArray: [], isDewey: true)
+    @ObservedObject var certificateList : CertificateList
     var body: some View {
         
         
@@ -78,7 +79,7 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(bookshelfLength: 8, isDeweyOrNot: false, isDifficult: true)
+        GameView(bookshelfLength: 8, isDeweyOrNot: false, isDifficult: true, certificateList: CertificateList())
     }
 }
 
