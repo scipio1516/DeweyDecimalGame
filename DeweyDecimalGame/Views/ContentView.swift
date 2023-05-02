@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var username = ""
+    @State var savedCertificate = false
     var body: some View {
         NavigationView {
             VStack(spacing: 40) {
@@ -16,16 +17,16 @@ struct ContentView: View {
                     Text("Library Organizer Quiz")
                         .font(.title)
                         .fontWeight(.bold)
-
+                    
                     HStack {
                         Text("Enter Username: ")
                         TextField("John Doe", text: $username).frame(width: 120)
                     }.font(.title2)
                     NavigationLink(destination: InstructionsView(),
                                    label: {MainButton(text: "Instructions")})
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding()
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding()
                     if(username.isEmpty) {
                         NavigationLink(destination: LevelSelect(),
                                        label: {MainButton(text: "Level Select")})
@@ -41,11 +42,11 @@ struct ContentView: View {
                         .fontWeight(.bold)
                         .padding(0)
                     }
-                    /*NavigationLink(destination: SavedCertificates(certificateList: CertificateList()),
-                                   label: {MainButton(text: "Level Select")})
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(0)*/
+                        NavigationLink(destination: SavedCertificates(certificateList: CertificateList()),
+                                       label: {MainButton(text: "Certificates")})
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(0)
                 }
                 
                 

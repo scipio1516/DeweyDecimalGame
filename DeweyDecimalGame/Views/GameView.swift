@@ -14,6 +14,7 @@ struct GameView: View {
     @State var isInOrder = false
     @State var isDifficult = false
     @State var bookInfo = BookData(bookArray: [], isDewey: true)
+    @State var date = Date.now
     @ObservedObject var certificateList : CertificateList
     var body: some View {
         
@@ -71,7 +72,8 @@ struct GameView: View {
         }
         //.overlay(content: WinView())
         .sheet(isPresented: $isInOrder) {
-            WinView()
+            WinView(date: date)
+            
         }
     }
     

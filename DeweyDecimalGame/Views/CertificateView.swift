@@ -11,6 +11,7 @@ struct CertificateView: View {
     @State var date = Date.now
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var data: UserData
+    @State var savedCertificate = false
     var body: some View {
         NavigationView {
             ZStack {

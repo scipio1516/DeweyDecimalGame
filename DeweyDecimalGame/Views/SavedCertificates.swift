@@ -11,47 +11,40 @@ struct SavedCertificates: View {
     @ObservedObject var certificateList : CertificateList
     //@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
-        ZStack {
-            VStack {
-                HStack {
-                    Spacer()
-                    Text("Saved Certificates")
-                        .foregroundColor(Color("Peach"))
-                        .shadow(color: Color("Peach"), radius: 20)
-                        .fontWeight(.bold)
-                        .font(.title)
-                        .frame(alignment: .center)
-                    Spacer()
-                }
+        VStack {
+            Spacer()
+            Text("Saved Certificates")
+                .fontWeight(.bold)
+                .font(.title)
+                .frame(alignment: .center)
                 .padding()
-                List {
-                    HStack {
-                        Text("Type")
-                            .padding(.trailing, 75)
-                            .padding(.leading, -75)
-                        Spacer()
-                        Text("Completion Date")
-                    }
-                    .bold()
-                    .foregroundColor(Color("Bistre"))
-                    .listRowBackground(Color("Peach"))
-                    ForEach(certificateList.certificates) { certificate in
-                        NavigationLink {
-                            CertificateView(date: certificate.time)
-                        } label: {
-                            HStack {
-                                Spacer()
-                                Text(" \(certificate.time.formatted(date: .abbreviated, time: .shortened))")
-                            }
-                            .foregroundColor(Color("Bistre"))
-                        }
-                        .listRowBackground(Color("Peach"))
-                    }
+            List {
+                HStack {
+                    Text("Type")
+                        //.padding(.trailing, 75)
+                        //.padding(.leading, -75)
+                    Spacer()
+                    Text("Completion Date")
                 }
-                .scrollContentBackground(.hidden)
-                Spacer()
+                .bold()
+                ForEach(certificateList.certificates) { certificate in
+                    NavigationLink {
+                        CertificateView(date: certificate.time, savedCertificate: true)
+                            .navigationBarBackButtonHidden()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text(" \(certificate.time.formatted(date: .abbreviated, time: .shortened))")
+                        }
+                    }
+                    
+                }
             }
+            .scrollContentBackground(.hidden)
+            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
     }
 }
 
