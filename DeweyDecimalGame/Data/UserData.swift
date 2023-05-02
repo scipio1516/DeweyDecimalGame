@@ -10,9 +10,14 @@ import Foundation
 //data that will persist through all views(possibly can expand to save when the app closes?)
 class UserData: ObservableObject {
     @Published var username: String
+    @Published var allLevels: [[Book]] = [[], [], [], []]
+    
     
     init(username: String) {
         self.username = username
+        
     }
+    
+    
     
 }

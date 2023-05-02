@@ -48,11 +48,22 @@ struct ContentView: View {
                         .fontWeight(.bold)
                         .padding(0)
                 }
-                
+                VStack {
+                    
+                    Image("BookShelf").resizable()
+                        .frame(width: 380, height: 240)
+                        .position(x: 150, y: -10)
+                    
+                    Image("BookShelf_2").resizable()
+                        .frame(width: 380, height: 240)
+                        .position(x: 700, y: -50)
+                }
                 
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
+           
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea(.all).background(Color(red: 0.38, green: 0.71, blue: 0.93))
+            
         }.environmentObject(UserData(username: username))
         
     }
