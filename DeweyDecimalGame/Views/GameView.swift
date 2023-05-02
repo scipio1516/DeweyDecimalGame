@@ -15,6 +15,8 @@ struct GameView: View {
     @State var isInOrder = false
     @State var isDifficult = false
     @State var levelNumber = 0
+    @State var shake = false
+    @State var displaySheet = false
     var body: some View {
         
         
@@ -28,6 +30,10 @@ struct GameView: View {
                     MainButton(text: "Check!")
                         .onTapGesture {
                             isInOrder = BookData(bookArray: data.allLevels[levelNumber], isDewey: isDeweyOrNot).checkForDeweyOrder()
+                            shake = true
+                        }
+                        .shake($shake) {
+                            displaySheet = true
                         }
                         .padding()
                     
