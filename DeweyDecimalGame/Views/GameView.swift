@@ -14,7 +14,12 @@ struct GameView: View {
     @State var isDeweyOrNot: Bool
     @State var isInOrder = false
     @State var isDifficult = false
+    @State var bookInfo = BookData(bookArray: [], isDewey: true)
+    @State var date = Date.now
+    @ObservedObject var certificateList : CertificateList
     @State var levelNumber = 0
+    @State var shake = false
+    @State var displaySheet = false
     var body: some View {
         
         
@@ -28,6 +33,10 @@ struct GameView: View {
                     MainButton(text: "Check!")
                         .onTapGesture {
                             isInOrder = BookData(bookArray: data.allLevels[levelNumber], isDewey: isDeweyOrNot).checkForDeweyOrder()
+                            shake = true
+                        }
+                        .shake($shake) {
+                            displaySheet = true
                         }
                         .padding()
                     
@@ -93,7 +102,8 @@ struct GameView: View {
         }
         //.overlay(content: WinView())
         .sheet(isPresented: $isInOrder) {
-            WinView()
+            WinView(date: date)
+            
         }
     }
     
@@ -101,7 +111,7 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(bookshelfLength: 8, isDeweyOrNot: false, isDifficult: true)
+        GameView(bookshelfLength: 8, isDeweyOrNot: false, isDifficult: true, certificateList: CertificateList())
     }
 }
 

@@ -4,13 +4,14 @@
 //
 //  Created by Dylan Koehler on 4/19/23.
 //
-/*
+
 import SwiftUI
 
 struct CertificateView: View {
     @State var date = Date.now
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var data: UserData
+    @State var savedCertificate = false
     var body: some View {
         NavigationView {
             ZStack {
@@ -37,7 +38,7 @@ struct CertificateView: View {
 
 struct CertificateView_Previews: PreviewProvider {
     static var previews: some View {
-        CertificateView(UserData(username: "John Doe"))
+        CertificateView().environmentObject(UserData(username: "John Doe"))
     }
 }
-*/
+

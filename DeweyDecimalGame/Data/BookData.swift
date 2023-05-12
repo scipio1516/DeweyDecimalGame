@@ -13,6 +13,7 @@ struct BookData {
     var bookArray: [Book]
     var difficultVersion = false
     
+    
     init(bookArray: [Book], isDewey: Bool) {
         self.bookArray = bookArray
         self.isDewey = isDewey

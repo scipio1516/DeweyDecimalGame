@@ -14,7 +14,7 @@ struct BookShelf_3_True: View {
             VStack(spacing: 20) {
                 ZStack {
                     
-                    GameView(bookshelfLength: 3, isDeweyOrNot: true)
+                    GameView(bookshelfLength: 3, isDeweyOrNot: true, certificateList: CertificateList())
                         
                     
 
