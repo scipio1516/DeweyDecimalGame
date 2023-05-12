@@ -41,12 +41,12 @@ struct ContentView: View {
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(0)
-                    }
+                    }/*
                         NavigationLink(destination: SavedCertificates(certificateList: CertificateList()),
                                        label: {MainButton(text: "Certificates")})
                         .font(.title2)
                         .fontWeight(.bold)
-                        .padding(0)
+                        .padding(0)*/
                 }
                 VStack {
                     
