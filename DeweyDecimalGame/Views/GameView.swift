@@ -14,6 +14,9 @@ struct GameView: View {
     @State var isDeweyOrNot: Bool
     @State var isInOrder = false
     @State var isDifficult = false
+    @State var bookInfo = BookData(bookArray: [], isDewey: true)
+    @State var date = Date.now
+    @ObservedObject var certificateList : CertificateList
     @State var levelNumber = 0
     @State var shake = false
     @State var displaySheet = false
@@ -99,7 +102,8 @@ struct GameView: View {
         }
         //.overlay(content: WinView())
         .sheet(isPresented: $isInOrder) {
-            WinView()
+            WinView(date: date)
+            
         }
     }
     
@@ -107,7 +111,7 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(bookshelfLength: 8, isDeweyOrNot: false, isDifficult: true)
+        GameView(bookshelfLength: 8, isDeweyOrNot: false, isDifficult: true, certificateList: CertificateList())
     }
 }
 

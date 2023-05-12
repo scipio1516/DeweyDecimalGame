@@ -17,7 +17,7 @@ struct WinView: View {
                 Text("Congratulations, \(data.username)")
                     .font(.title)
                     .fontWeight(.bold)
-                Text("You Win!")
+                Text("You completed Library Book Shelving!")
                     .font(.title)
                     .fontWeight(.bold)
                 Text("Completion Date:\n \(date.formatted(date: .abbreviated, time: .shortened))")

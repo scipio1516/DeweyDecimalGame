@@ -16,7 +16,7 @@ struct BookShelf_8_True: View {
         VStack(spacing: 40) {
             VStack(spacing: 20) {
                 ZStack {
-                        GameView(bookshelfLength: 8, isDeweyOrNot: true, isDifficult: difficulty)
+                    GameView(bookshelfLength: 8, isDeweyOrNot: true, isDifficult: difficulty, certificateList: CertificateList())
                      //   .position(x: 425, y: 275)
               // move the entire bookshelf down
                     
