@@ -70,3 +70,11 @@ var fictionBookDatabase: [Book] = [ // 20 Total
     
 ]
 
+var fictionBookDatabaseDifficult: [Book] = [ //also 20 books; will have the same call numbers as the above.
+    Book(bookTitle: "Mecho", bookColor: redColor, authorName: "Angel Karaliychev", callID: "KAR", deweyDecimalNumber: 0), // 1
+    Book(bookTitle: "Dive in the Sun", bookColor: redColor, authorName: "Douglas Reeman", callID: "REE", deweyDecimalNumber: 0), // 2
+    Book(bookTitle: "The Cavalier Case", bookColor: redColor, authorName: "Antonia Fraser", callID: "Fraser", deweyDecimalNumber: 0), // 3
+    Book(bookTitle: "Araminta Station", bookColor: pureBlueColor, authorName: "Jack Vance", callID: "VAN", deweyDecimalNumber: 0), // 4
+    Book(bookTitle: "In That Time of Secrets", bookColor: pureBlueColor, authorName: "Ann Turnbull", callID: "TUR", deweyDecimalNumber: 0) // 5
+]
+
