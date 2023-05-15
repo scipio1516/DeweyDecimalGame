@@ -20,8 +20,11 @@ struct NameChanger_: View {
                     Text("Enter Username: ")
                     TextField("", text: $data.username).frame(width: 120)
                 }.font(.title2)
-             //   NavigationLink(destination: LevelSelect(),
-                      //         label: {MainButton(text: "Confirm")})
+                               MainButton(text: "Confrim")
+                Text("Once the Confrim button is changed pressed use the back button on the top left to get back.")
+                    .font(.title3)
+                    .padding()
+                    .padding(.horizontal)
 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
