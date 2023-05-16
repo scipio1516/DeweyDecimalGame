@@ -11,6 +11,7 @@ struct LevelSelect: View {
     @EnvironmentObject var data: UserData
     @ObservedObject var certificateList = CertificateList()
     var body: some View {
+        VStack {
         HStack {
             VStack {
                 Text("Order by Call ID.")
@@ -55,8 +56,9 @@ struct LevelSelect: View {
                            label: {MainButton(text: "Certificates")})
             .font(.title2)
             .fontWeight(.bold)
-            .padding(0)
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .position(x: 290, y: 0)
+    }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
     }
 }
