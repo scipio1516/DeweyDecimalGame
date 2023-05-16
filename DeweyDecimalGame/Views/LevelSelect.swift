@@ -17,34 +17,34 @@ struct LevelSelect: View {
                 Text("Order by Call ID.")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding()
-                    .position(x: 300, y: 120)
+                    //.padding()
+                    .position(x: 300, y: 50)
                 NavigationLink(destination: BookShelf_8(difficulty: false),
                                label: {MainButton(text: "Easy")})
                 .fontWeight(.bold)
-                .position(x: 300, y: 55)
+                .position(x: 300, y: 75)
                 NavigationLink(destination:  BookShelf_8(difficulty: true),
                                label: {MainButton(text: "Hard")})
                 .fontWeight(.bold)
-                .padding()
-                .position(x: 300, y: -5)                
+                //.padding()
+                .position(x: 300, y: 100)
                  
             }
             VStack {
                 Text("Order by Dewey Decimal Number.")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .padding()
-                    .position(x: 280, y: 105)
+                    //.padding()
+                    .position(x: 280, y: 50)
                 NavigationLink(destination: BookShelf_8_True(difficulty: false),
                                label: {MainButton(text: "Easy")})
                 .fontWeight(.bold)
-                .position(x: 280, y: 60)
+                .position(x: 280, y: 75)
                 NavigationLink(destination: BookShelf_8_True(difficulty: true).environmentObject(data),
                                label: {MainButton(text: "Hard")})
                 .fontWeight(.bold)
-                .padding()
-                .position(x: 280, y: 0)
+                //.padding()
+                .position(x: 280, y: 100)
             }
             NavigationLink(destination: NameChanger_(),
                            label: {MainButton(text: "Name Chnage")})
@@ -56,7 +56,7 @@ struct LevelSelect: View {
                            label: {MainButton(text: "Certificates")})
             .font(.title2)
             .fontWeight(.bold)
-            .position(x: 290, y: 0)
+            .position(x: 425, y: 125)
     }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
