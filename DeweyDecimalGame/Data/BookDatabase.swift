@@ -42,7 +42,7 @@ var nonfictionBookDatabase: [Book] = [
     
 ]
 
-var fictionBookDatabase: [Book] = [ // 20 Total
+var fictionBookDatabase: [Book] = [ // 21 Total
     Book(bookTitle: "Ms. B's Book Club", bookColor: greenColor, authorName: "Amy Karam", callID: "KAR", deweyDecimalNumber: 0), // 1
     Book(bookTitle: "The Reading Place", bookColor: greenColor, authorName: "Benoit Reed", callID: "REE", deweyDecimalNumber: 0), // 2
     Book(bookTitle: "Gone Fishing", bookColor: greenColor, authorName: "Charlie Francis", callID: "FRA", deweyDecimalNumber: 0), // 3
@@ -70,11 +70,27 @@ var fictionBookDatabase: [Book] = [ // 20 Total
     
 ]
 
-var fictionBookDatabaseDifficult: [Book] = [ //also 20 books; will have the same call numbers as the above.
+var fictionBookDatabaseDifficult: [Book] = [ //also 21 books; will have the same call numbers as the above.
     Book(bookTitle: "Mecho", bookColor: redColor, authorName: "Angel Karaliychev", callID: "KAR", deweyDecimalNumber: 0), // 1
     Book(bookTitle: "Dive in the Sun", bookColor: redColor, authorName: "Douglas Reeman", callID: "REE", deweyDecimalNumber: 0), // 2
     Book(bookTitle: "The Cavalier Case", bookColor: redColor, authorName: "Antonia Fraser", callID: "Fraser", deweyDecimalNumber: 0), // 3
     Book(bookTitle: "Araminta Station", bookColor: pureBlueColor, authorName: "Jack Vance", callID: "VAN", deweyDecimalNumber: 0), // 4
-    Book(bookTitle: "In That Time of Secrets", bookColor: pureBlueColor, authorName: "Ann Turnbull", callID: "TUR", deweyDecimalNumber: 0) // 5
+    Book(bookTitle: "In That Time of Secrets", bookColor: pureBlueColor, authorName: "Ann Turnbull", callID: "TUR", deweyDecimalNumber: 0), // 5
+    Book(bookTitle: "Karlovac Chronicle", bookColor: pureBlueColor, authorName: "Jefrem Tetovac", callID: "TET", deweyDecimalNumber: 0), //6
+    Book(bookTitle: "It's Alive She Says", bookColor: orangeColor, authorName: "Cole Swenson", callID: "SWE", deweyDecimalNumber: 0), //7
+    Book(bookTitle: "The Story of Laughing Dandino", bookColor: orangeColor, authorName: "Ursula Williams", callID: "WIL", deweyDecimalNumber: 0), //8
+    Book(bookTitle: "The Bee-Man of Orn", bookColor: orangeColor, authorName: "Frank Stockton", callID: "STO", deweyDecimalNumber: 0), //9
+    Book(bookTitle: "Worst Case", bookColor: purpleColor, authorName: "Michael Ledwidge", callID: "LED", deweyDecimalNumber: 0), //10
+    Book(bookTitle: "Cleopatra", bookColor: purpleColor, authorName: "Marie Colban", callID: "COL", deweyDecimalNumber: 0), //11
+    Book(bookTitle: "A Barcelona", bookColor: purpleColor, authorName: "Jacint Verdaguer", callID: "VER", deweyDecimalNumber: 0), //12
+    Book(bookTitle: "The Narrowback", bookColor: extraColor, authorName: "Daphne Ledward", callID: "LED", deweyDecimalNumber: 0), //13
+    Book(bookTitle: "The Passionate Heart", bookColor: extraColor, authorName: "Beatrix Beck", callID: "BEC", deweyDecimalNumber: 0), //14
+    Book(bookTitle: "Andy and Tamika", bookColor: extraColor, authorName: "David Adler", callID: "ADL", deweyDecimalNumber: 0), //15
+    Book(bookTitle: "Angle of Ascent", bookColor: turquoiseColor, authorName: "Robert Hayden", callID: "HAY", deweyDecimalNumber: 0), //16
+    Book(bookTitle: "Verses from Maoriland", bookColor: turquoiseColor, authorName: "Dora Wilcox", callID: "WIL", deweyDecimalNumber: 0), //17
+    Book(bookTitle: "The Bamboo Chest", bookColor: turquoiseColor, authorName: "Cork Graham", callID: "GRA", deweyDecimalNumber: 0), //18
+    Book(bookTitle: "All the Nice Girls", bookColor: greenColor, authorName: "Barbara Anderson", callID: "AND", deweyDecimalNumber: 0), //19
+    Book(bookTitle: "Mother Love Funerals", bookColor: greenColor, authorName: "Roland Curram", callID: "CUR", deweyDecimalNumber: 0), //20
+    Book(bookTitle: "This Other Eden", bookColor: greenColor, authorName: "Catherine Gaskin", callID: "GAS", deweyDecimalNumber: 0)
 ]
 
