@@ -14,25 +14,29 @@ struct CertificateView: View {
     @State var savedCertificate = false
     var body: some View {
         NavigationView {
-            ZStack {
-                VStack {
-                    Text("Congratulations!")
-                        .font(.system(size: 80))
-                        .bold()
-                        .shadow(color: .yellow, radius: 50)
-                    Group {
-                        Text(data.username)
-                            .font(.system(size: 40))
-                        Text("Completion Date:\n \(date.formatted(date: .abbreviated, time: .shortened))")
-                            .multilineTextAlignment(.center)
-                            .font(.title3)
-                    }
-                    .foregroundColor(Color(.blue))
-                    .fontWeight(.semibold)
-                }
+            VStack {
+                Text("Congratulations, \(data.username)")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text("You completed Library Book Shelving!")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text("Completion Date:\n \(date.formatted(date: .abbreviated, time: .shortened))")
+                    .multilineTextAlignment(.center)
+                    .font(.title3)
+                    .padding()
+                NavigationLink(destination: LevelSelect(),
+                               label: {MainButton(text: "Level Select")})
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding()
+                //Button(label: {MainButton(text: "Instructions")) {
+                
+                //}
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

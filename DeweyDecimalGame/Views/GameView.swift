@@ -33,10 +33,15 @@ struct GameView: View {
                     MainButton(text: "Check!")
                         .onTapGesture {
                             isInOrder = BookData(bookArray: data.allLevels[levelNumber], isDewey: isDeweyOrNot).checkForDeweyOrder()
+
                             shake = true
                         }
                         .shake($shake) {
-                            displaySheet = true
+                            if isInOrder {
+                                date = Date.now
+                                certificateList.certificates.append(Certificate(time: date))
+                                displaySheet = true
+                            }
                         }
                         .padding()
                     
@@ -101,9 +106,11 @@ struct GameView: View {
                 .ignoresSafeArea(.all).background(Color(hue: 0.599, saturation: 0.433, brightness: 0.971))
         }
         //.overlay(content: WinView())
+
         .sheet(isPresented: $isInOrder) {
-            WinView(date: date)
-            
+            //WinView(date: date)
+            CertificateView(date: date)
+
         }
     }
     
@@ -112,11 +119,7 @@ struct GameView: View {
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView(bookshelfLength: 8, isDeweyOrNot: false, isDifficult: true, certificateList: CertificateList())
+        
     }
 }
 
-struct ListItem : Identifiable, Codable {
-    var id = UUID()
-    var course = String()
-    var dueDate = Date()
-}

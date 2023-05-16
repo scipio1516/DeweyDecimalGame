@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @State var username = ""
     @State var savedCertificate = false
+    @ObservedObject var certificateList = CertificateList()
+
     var body: some View {
         NavigationView {
             VStack(spacing: 40) {
@@ -41,12 +43,7 @@ struct ContentView: View {
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(0)
-                    }/*
-                        NavigationLink(destination: SavedCertificates(certificateList: CertificateList()),
-                                       label: {MainButton(text: "Certificates")})
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding(0)*/
+                    }
                 }
                 VStack {
                     
