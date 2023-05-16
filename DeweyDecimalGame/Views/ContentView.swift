@@ -51,12 +51,12 @@ struct ContentView: View {
                 VStack {
                     
                     Image("BookShelf").resizable()
-                        .frame(width: 380, height: 240)
-                        .position(x: 150, y: -10)
+                        .frame(width: 370, height: 240)
+                        .position(x: 130, y: -10)
                     
                     Image("BookShelf_2").resizable()
-                        .frame(width: 380, height: 240)
-                        .position(x: 700, y: -50)
+                        .frame(width: 370, height: 240)
+                        .position(x: 720, y: -50)
                 }
                 
             }
