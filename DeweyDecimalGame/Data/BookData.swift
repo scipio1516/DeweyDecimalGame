@@ -51,11 +51,13 @@ struct BookData {
                 for index in 0..<(bookArray.count/3 + 1) {
                     bookArray[index].deweyDecimalNumber = bookArray[0].deweyDecimalNumber
                 }
-                bookArray.shuffle()
             }
             else {
-                
+                for index in 0..<(bookArray.count/4) {
+                    bookArray[(index * 2) + 1] = fictionBookDatabaseDifficult.first(where: {$0.callID == bookArray[index * 2].callID}) ?? bookArray[(index * 2) + 1]
+                }
             }
+            bookArray.shuffle()
         }
         
     }
@@ -68,12 +70,14 @@ struct BookData {
             return false
         }
         else if(fTemp.callID == sTemp.callID) {
-            if(fTemp.authorName > sTemp.authorName) {
+            if(fTemp.authorName.split(separator: " ")[1] > sTemp.authorName.split(separator: " ")[1]) {
                 return false
             }
             
-            else {
-                return true
+            else if (fTemp.authorName.split(separator: " ")[1] == sTemp.authorName.split(separator: " ")[1]){
+                if(fTemp.authorName > sTemp.authorName) {
+                    return false
+                }
             }
         }
         
