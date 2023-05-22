@@ -47,7 +47,7 @@ struct LevelSelect: View {
                 .position(x: 280, y: 100)
             }
             NavigationLink(destination: NameChanger_(),
-                           label: {MainButton(text: "Name Chnage")})
+                           label: {MainButton(text: "Name Change")})
             .position(x: 180, y: 350)
                 
             }
